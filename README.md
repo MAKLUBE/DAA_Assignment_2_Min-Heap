@@ -37,13 +37,13 @@ as well as extended operations: **decreaseKey**, **merge**, and **fromArray (Flo
 Below are the results from the empirical benchmark of the Min-Heap algorithm.
 
 ### Figure 1 — Time vs Input Size
-![Time vs N] (docs/performance-plots/Time vs N.png)
+![Time vs N](docs/performance-plots/time_vs_n.png)
 
 This plot shows how execution time increases as input size grows.
 The trend matches the expected O(n log n) complexity.
 
 ### Figure 2 — Swaps vs Input Size
-![Swaps vs N] (docs/performance-plots/Swaps vs N.png)
+![Swaps vs N](docs/performance-plots/swaps_vs_n.png)
 
 This plot illustrates the number of element swaps, 
 which also follows an O(n log n) trend.
