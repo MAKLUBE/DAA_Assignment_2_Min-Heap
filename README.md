@@ -55,4 +55,13 @@ Max-Heap implementation is available here:
 
 [MaxHeap_Peer_Review_Report.pdf](docs/performance-plots/MaxHeap_Peer_Review_Report.pdf)
 
+## Optimization-decreaseKey improvement
 
+Thanks to Aitkali for his report about my algorithm!
+Going throw it I discovered a bunch of his suggestions, I improved one thing.
+I optimized the decreaseKey operation by adding simple validation and a fast-path.
+
+If the new value is greater than the current one, an exception is thrown to prevent invalid heap states.
+
+If the value is equal, the function returns immediately, avoiding unnecessary heapify calls.
+I reckon, this change improves correctness and slightly reduces redundant operations during future updates.
