@@ -82,7 +82,7 @@ public class MinHeap {
     }
 
     //----------------------------------------------------------------------------------------
-
+    /**
     public void decreaseKey(int index, int newValue) {
         if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
         int old = get(index);
@@ -90,6 +90,17 @@ public class MinHeap {
         set(index, newValue);
         heapifyUpFrom(index);
     }
+    **/
+
+    public void decreaseKey(int i, int newVal) {
+        if (i < 0 || i >= size) throw new IndexOutOfBoundsException();
+        int cur = get(i);
+        if (newVal > cur) throw new IllegalArgumentException("newVal > current");
+        if (newVal == cur) return;
+        set(i, newVal);
+        heapifyUpFrom(i);
+    }
+
 
     public void merge(MinHeap other) {
         if (other == null || other.size == 0) return;
@@ -129,6 +140,7 @@ public class MinHeap {
             i = p;
         }
     }
+
     private void heapifyDownFrom(int index) {
         perf.h();
         int i = index;
@@ -144,4 +156,5 @@ public class MinHeap {
             i = s;
         }
     }
+
 }
