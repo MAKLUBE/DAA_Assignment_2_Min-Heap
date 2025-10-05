@@ -92,8 +92,6 @@ public class MinHeapTest {
         }
         assertTrue(a.isEmpty());
     }
-    assertTrue(a.isEmpty());
-}
 
 
 
