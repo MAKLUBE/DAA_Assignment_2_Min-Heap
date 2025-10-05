@@ -1,8 +1,6 @@
 package algorithms;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
 public class MinHeapTest {
 
@@ -78,22 +76,23 @@ public class MinHeapTest {
 
 
     @Test
-    void decreaseKey_and_merge_work() {
-    MinHeap a = new MinHeap();
-    a.add(10); a.add(5); a.add(30); a.add(40);
-    a.decreaseKey(3, 1);              
-    assertEquals(1, a.peek());
+    void decreaseKeyAndMergework() {
+        MinHeap a = new MinHeap();
+        a.add(10); a.add(5); a.add(30); a.add(40);
+        a.decreaseKey(3, 1);
+        assertEquals(1, a.peek());
 
-    MinHeap b = new MinHeap();
-    b.add(2); b.add(6); b.add(0);     
+        MinHeap b = new MinHeap();
+        b.add(2); b.add(6); b.add(0);
 
-    a.merge(b);                       
-    int[] expect = {0,1,2,5,6,10,30}; 
-    for (int e : expect) {
-        assertEquals(e, a.poll());
+        a.merge(b);
+        int[] expect = {0,1,2,5,6,10,30};
+        for (int e : expect) {
+            assertEquals(e, a.poll());
+        }
+        assertTrue(a.isEmpty());
     }
-    assertTrue(a.isEmpty());
-}
+
 
 
 }
