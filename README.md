@@ -46,7 +46,7 @@ The trend matches the expected O(n log n) complexity.
 ![Swaps vs N](docs/performance-plots/swaps_vs_n.png)
 
 This plot illustrates the number of element swaps, 
-which also follows an O(n log n) trend.
+which follows an O(n) trend.
 
 ## Peer Review Report
 
