@@ -14,11 +14,11 @@ public class MinHeap {
     public PerformanceTracker metrics() { return perf; }
 
     public MinHeap() {}
+
     public MinHeap(int capacity) {
         this.capacity = Math.max(1, capacity);
         this.items = new int[this.capacity];
     }
-
 
     //--------------------------------------------------------------------------------------
 
@@ -101,24 +101,10 @@ public class MinHeap {
         heapifyUpFrom(i);
     }
 
-
     public void merge(MinHeap other) {
         if (other == null || other.size == 0) return;
-        int newSize = this.size + other.size;
-
-        int newCap = Math.max(this.capacity, newSize);
-        if (newCap < newSize) newCap = newSize;
-        int[] combined = new int[newCap];
-
-        System.arraycopy(this.items, 0, combined, 0, this.size);
-        System.arraycopy(other.items, 0, combined, this.size, other.size);
-
-        this.items = combined;
-        this.capacity = newCap;
-        this.size = newSize;
-
-        for (int i = this.size / 2 - 1; i >= 0; i--) {
-            heapifyDownFrom(i);
+        for (int j = 0; j < size; j++) {
+            set(j, other.get(j));
         }
     }
 
@@ -126,7 +112,8 @@ public class MinHeap {
         MinHeap h = new MinHeap(a.length);
         System.arraycopy(a, 0, h.items, 0, a.length);
         h.size = a.length;
-        for (int i = h.size / 2 - 1; i >= 0; i--) h.heapifyDownFrom(i);
+        for (int i = h.size / 2 - 1; i >= 0; i--)
+            h.heapifyDownFrom(i);
         return h;
     }
 
